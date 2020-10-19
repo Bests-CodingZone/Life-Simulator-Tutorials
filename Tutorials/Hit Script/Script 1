@@ -1,1 +1,14 @@
-
+script.Parent.Touched:Connect(function(touch)
+    if touch.Parent:FindFirstChild("Humanoid") then
+        if script.Parent.Hit.Value == false then
+            script.Parent.Hit.Value = true
+            local c = (10/12) * (60/88
+            local s = math.floor(c * script.Parent.Velocity.Magnitude)
+            local humanoid = touch.Parent.FindFirstChild("Humanoid")
+            print("Hit Pedestrian")
+            humanoid.Health = humanoid.Health - s * 2
+            wait(5)
+            script.Parent.Hit.Value = false
+        end
+    end
+end)
